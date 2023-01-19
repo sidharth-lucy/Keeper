@@ -1,28 +1,40 @@
+import React from "react";
 import { StrictMode } from "react";
 
 import Header from "./heading";
 import Footer from "./footer";
 import Notes from "./notes";
+import InputArea from "./inputArea";
 
-import Allnotes from "./noteList";
 
-// console.log(Allnotes);
-
-function cretaeNote(data){
+function cretaeNote(data,index){
+  console.log(index);
   return (
     <Notes 
-      key={data.id}
+      key={index}
       title={data.title}
-      desc={data.desc}
+      desc={data.content}
     />
   );
 }
 
 
 function App(){
+  var [Allnotes , setAllNotes] = React.useState([]);
+
+  function handleClick(newitem){
+    
+    setAllNotes(function (){
+      return [newitem , ...Allnotes];
+    });
+  }
+
+
   return (
     <StrictMode>
       <Header/>
+      <InputArea handleAdd={handleClick} />
+
       <div className="all-notes">
         { Allnotes.map(cretaeNote) }
       </div>
