@@ -8,10 +8,9 @@ import InputArea from "./inputArea";
 
 
 
-var aa={title:'gregeer' , content:'rgeetg4gteg'}
 
 function App(){
-  var [Allnotes , setAllNotes] = React.useState([aa]);
+  var [Allnotes , setAllNotes] = React.useState([]);
 
   function handleClick(newitem){
     
