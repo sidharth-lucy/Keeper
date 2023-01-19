@@ -7,25 +7,26 @@ import Notes from "./notes";
 import InputArea from "./inputArea";
 
 
-function cretaeNote(data,index){
-  console.log(index);
-  return (
-    <Notes 
-      key={index}
-      title={data.title}
-      desc={data.content}
-    />
-  );
-}
 
+var aa={title:'gregeer' , content:'rgeetg4gteg'}
 
 function App(){
-  var [Allnotes , setAllNotes] = React.useState([]);
+  var [Allnotes , setAllNotes] = React.useState([aa]);
 
   function handleClick(newitem){
     
     setAllNotes(function (){
       return [newitem , ...Allnotes];
+    });
+  }
+
+  function handleDelete(id){
+    // console.log(id);
+
+    setAllNotes( function (pre){
+      return (pre.filter(function(data , index){
+        return id!==index;
+      }));
     });
   }
 
@@ -36,7 +37,17 @@ function App(){
       <InputArea handleAdd={handleClick} />
 
       <div className="all-notes">
-        { Allnotes.map(cretaeNote) }
+        { Allnotes.map( function(data ,index){
+          return (
+            <Notes 
+              key={index}
+              title={data.title}
+              desc={data.content}
+              handleDelete= {handleDelete}
+              index={index}
+            />
+          );
+        }) }
       </div>
       <Footer/>
     </StrictMode>
