@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Handlee&display=swap');
+
+body{
+    margin: 0;
+    background-color: aliceblue;
+    font-family: 'Gideon Roman', cursive;
+    font-family: 'Handlee', cursive;
+}
+
+header{
+    padding: 8px 40px 1px 40px;
+    margin: -25px 0px 5px 0px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgba(242, 225, 39, 0.884);
+}
+
+
+.foot{
+    background-color: rgb(231, 190, 190);
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.notes{
+    border-radius: 5px;
+    padding: 2px;
+    margin: 10px;
+    background-color: white;
+    max-width: 30%;
+    overflow: hidden;
+
+}
+
+.notes-title{
+    font-weight: bold;
+
+}
+
+.all-notes{
+    display: flex;
+    flex-wrap: wrap;
+}
